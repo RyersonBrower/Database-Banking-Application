@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Database Project</title>
+
+    <link rel="stylesheet" href="mainStyles.css">
+</head>
+<body>
+
+    <div id="buttonContainer">
+        <button id ="button1">Generate Representative Report</button>
+        <button id ="button2">Generate Order Report</button>
+        <button id ="button3">Add New Representative</button>
+        <button id ="button4">Update Customer Credit </button>
+    </div>
+
+    <div id="exitContainer">
+        <button id ="exitButton">Exit</button>
+    </div>
+
+
+
+    <!-- Modal Structure -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Generate Order Report</h2>
+
+            <label for="customerSelect">Select Customer:</label>
+            <select id="customerSelect">
+                <!-- Populated dynamically from backend -->
+            </select>
+
+            <button id="submitOrderReport">Submit</button>
+            <!--Report result-->
+            <div id="reportResult" style="margin-top: 20px;"></div>
+        </div>
+    </div>
+
+    <!-- Representative Report Modal -->
+    <div id="repModal" class="modal">
+        <div class="modal-content">
+            <span class="close-rep-button">&times;</span>
+            <h2>Representative Report</h2>
+            <div id="repReportResult" style="margin-top: 20px;"></div>
+        </div>
+    </div>
+    <!-- Add Representative Modal -->
+    <div id="addRepModal" class="modal">
+        <div class="modal-content">
+          <span class="close-add-rep">&times;</span>
+          <h2>Add New Representative</h2>
+        
+          <label for="newRepNum">Rep Number:</label>
+          <input type="text" id="newRepNum" required><br><br>
+
+         <label for="newFirstName">First Name:</label>
+         <input type="text" id="newFirstName" required><br><br>
+
+         <label for="newLastName">Last Name:</label>
+         <input type="text" id="newLastName" required><br><br>
+
+         <label for="newPassword">Password:</label>
+         <input type="password" id="newPassword" required><br><br>
+
+          <button id="submitNewRep">Add Representative</button>
+          <div id="addRepResult" style="margin-top: 15px;"></div>
+      </div>
+    </div>
+
+        <!-- Update Customer Credit Modal -->
+    <div id="updateCreditModal" class="modal">
+     <div class="modal-content">
+         <span class="close-update-credit">&times;</span>
+         <h2>Update Customer Credit</h2>
+
+         <label for="customerSelectForCredit">Select Customer:</label>
+         <select id="customerSelectForCredit">
+             <!-- Populated dynamically from backend -->
+         </select>
+
+          <label for="newCreditAmount">New Credit Limit:</label>
+         <input type="number" id="newCreditAmount" required><br><br>
+
+         <button id="submitUpdateCredit">Update Credit</button>
+         <div id="updateCreditResult" style="margin-top: 15px;"></div>
+     </div>
+    </div>   
+    
+    <script src="mainScript.js"></script>
+
+</body>
+</html>
